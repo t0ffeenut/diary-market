@@ -37,9 +37,9 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
-	// ✅ DB 드라이버 (MariaDB + MySQL 둘 다 추가)
-	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
-	runtimeOnly 'mysql:mysql-connector-j:8.0.33'
+	// ✅ DB 드라이버 추가
+	implementation 'org.mariadb.jdbc:mariadb-java-client:3.4.0'
+	implementation 'mysql:mysql-connector-j:8.0.33'
 
 	// 개발 도구
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
