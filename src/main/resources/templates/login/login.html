@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>로그인</title>
+</head>
+<body>
+<h2>소셜 로그인</h2>
+
+<!-- 카카오 로그인 -->
+<a href="/oauth2/authorization/kakao">👉 카카오로 로그인</a>
+
+<!-- Spring Security 세션 로그아웃 -->
+
+
+<br>
+<a href="https://accounts.kakao.com/logout?continue=http://localhost:9001/login">
+    🔒 카카오 계정까지 완전히 로그아웃
+</a>
+
+<p th:if="${param.error}" style="color:red;">
+    ❗로그인 중 문제가 발생했습니다. 다시 시도해주세요.
+</p>
+</body>
+</html>
