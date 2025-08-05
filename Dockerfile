@@ -9,7 +9,7 @@ COPY . .
 
 # 4. Gradle 실행 권한 부여 + 빌드
 RUN chmod +x gradlew
-RUN ./gradlew build -x test --no-daemon --stacktrace
+RUN ./gradlew build -x test --no-daemon --stacktrace --refresh-dependencies
 
 
 # 5. 포트 설정
