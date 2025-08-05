@@ -37,8 +37,9 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
-	// ✅ DB 드라이버 추가
-	implementation 'org.mariadb.jdbc:mariadb-java-client:3.4.0'
+
+	// ✅ MySQL용 드라이버 추가 (prod용)
+	implementation 'mysql:mysql-connector-j:8.0.33'
 	
 
 	// 개발 도구
