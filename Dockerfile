@@ -7,6 +7,9 @@ WORKDIR /app
 # 3. 전체 프로젝트 복사
 COPY . .
 
+# ✅ 이 줄 추가: 이전 캐시 무시용 (빌드 안정화용)
+RUN rm -rf ~/.gradle
+
 # 4. Gradle 실행 권한 부여 + 빌드
 RUN chmod +x gradlew
 RUN ./gradlew build -x test --no-daemon --stacktrace --refresh-dependencies
