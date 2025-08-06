@@ -1,0 +1,19 @@
+<!-- templates/diary/sakje.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>일기 삭제</title>
+</head>
+<body>
+<h2>정말 이 일기를 삭제하시겠습니까?</h2>
+
+<p><strong>제목:</strong> <span th:text="${diary.title}"></span></p>
+<p><strong>내용:</strong> <span th:text="${diary.content}"></span></p>
+
+<form th:action="@{'/diary/sakjeProc/' + ${diary.diaryId}}" method="post">
+    <button type="submit">삭제 확인</button>
+</form>
+
+<a th:href="@{'/diary/view/' + ${diary.diaryId}}">취소</a>
+</body>
+</html>

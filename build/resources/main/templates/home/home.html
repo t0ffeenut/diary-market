@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Tokiary 홈</title>
+    <base href="/diary/"> <!-- ✅ 위치 이동 -->
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+</head>
+<body class="background">
+
+<h1 th:text="'안녕하세요, ' + ${nickname} + '님!'"></h1>
+
+<div class="container">
+    <img th:src="@{/images/back.png}" class="background" alt="배경">
+
+    <a href="newspaper">
+        <img th:src="@{/images/newspaper.png}" class="object newspaper" alt="newspaper">
+    </a>
+
+    <a href="calendar">
+        <img th:src="@{/images/calendar.png}" class="object calendar" alt="calendar">
+    </a>
+
+    <a href="lighting">
+        <img th:src="@{/images/lighting.png}" class="object lighting" alt="lighting">
+    </a>
+
+    <a href="camera">
+        <img th:src="@{/images/camera.png}" class="object camera" alt="camera">
+    </a>
+
+    <a href="book">
+        <img th:src="@{/images/book.png}" class="object book" alt="book">
+    </a>
+
+    <a href="recorder">
+        <img th:src="@{/images/recorder.png}" class="object recorder" alt="recorder">
+    </a>
+
+    <a href="wallet">
+        <img th:src="@{/images/wallet.png}" class="object wallet" alt="wallet">
+    </a>
+
+    <a href="magnifier">
+        <img th:src="@{/images/magnifier.png}" class="object magnifier" alt="magnifier">
+    </a>
+
+    <a href="coffee">
+        <img th:src="@{/images/coffee.png}" class="object coffee" alt="coffee">
+    </a>
+
+    <a href="donation">
+        <img th:src="@{/images/donation.png}" class="object donation" alt="donation">
+    </a>
+
+    <a href="flower">
+        <img th:src="@{/images/flower.png}" class="object flower" alt="flower">
+    </a>
+
+    <a href="crayon">
+        <img th:src="@{/images/crayon.png}" class="object crayon" alt="crayon">
+    </a>
+
+    <a href="pen">
+        <img th:src="@{/images/pen.png}" class="object pen" alt="pen">
+    </a>
+
+    <a href="paper">
+        <img th:src="@{/images/paper.png}" class="object paper" alt="paper">
+    </a>
+</div>
+
+</body>
+</html>

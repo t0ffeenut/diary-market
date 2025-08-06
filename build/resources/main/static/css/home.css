@@ -1,0 +1,110 @@
+/* 전체 배경 */
+
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container img.background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.object {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.object:hover {
+  transform: scale(1.50);
+}
+
+/* 개별 오브젝트 위치 */
+.newspaper {
+    top: 5%;
+    left: 15%;
+    width: 30%;
+}
+
+.calendar {
+    top: 5%;
+    left: 78%;
+    width: 15%;
+}
+
+.lighting {
+    top: 5%;
+    left: 28%;
+    width: 20%;
+}
+
+.camera {
+    top: 25%;
+    left: 5%;
+    width: 10%;
+}
+
+.book {
+    top: 35%;
+    left: 40%;
+    width: 40%;
+}
+
+.recorder {
+    top: 50%;
+    left: 25%;
+    width: 8%;
+}
+
+.wallet {
+    top: 30%;
+    left: 30%;
+    width: 10%;
+}
+
+.magnifier {
+    top: 60%;
+    left: 35%;
+    width: 10%;
+}
+
+.coffee {
+    top: 50%;
+    left: 70%;
+    width: 300%;
+}
+
+.donation {
+    top: 40%;
+    left: 80%;
+    width: 22%;
+}
+
+.flower {
+    top: 5%;
+    left: 55%;
+    width: 30%;
+}
+
+.crayon {
+    top: 50%;
+    left: 10%;
+    width: 8%;
+}
+
+.pen {
+    top: 60%;
+    left: 60%;
+    width: 18%;
+}
+
+.paper {
+    top: 40%;
+    left: 40%;
+    width: 18%;
+}
