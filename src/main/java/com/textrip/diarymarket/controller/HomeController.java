@@ -22,24 +22,32 @@ public class HomeController {
         return "login/login"; // ⬅️ templates/login/login.html 로 연결됨
     }
 
-    // "/home" 요청 처리
     @GetMapping("/home")
-    public String home(@AuthenticationPrincipal OAuth2User oauth2User, Model model) {
-        return processHome(oauth2User, model);
-    }
-
-    // 공통 처리 메서드
-    private String processHome(OAuth2User oauth2User, Model model) {
-        String emailId = "게스트";
-
-        if (oauth2User != null) {
-            Object emailIdAttr = oauth2User.getAttributes().get("emailId");
-            if (emailIdAttr != null) {
-                emailId = emailIdAttr.toString();
-            }
+    public String home(@AuthenticationPrincipal OAuth2User principal, Model model) {
+        if (principal != null) {
+            Map<String, Object> properties = (Map<String, Object>) principal.getAttribute("properties");
+            String nickname = properties != null ? (String) properties.get("nickname") : "사용자";
+            model.addAttribute("nickname", nickname);
+        } else {
+            model.addAttribute("nickname", "비로그인 사용자");
         }
-        model.addAttribute("userName", emailId);
-        return "home/home"; // templates/home.html 렌더링
+        return "home";
     }
+
+
+    // 🔽 여기에 이 메서드를 **추가**하면 됨
+    private String processHome(OAuth2User oauth2User, Model model) {
+        if (oauth2User != null) {
+            Map<String, Object> properties = (Map<String, Object>) oauth2User.getAttribute("properties");
+            String nickname = properties != null ? (String) properties.get("nickname") : "사용자";
+            model.addAttribute("nickname", nickname);
+        } else {
+            model.addAttribute("nickname", "비로그인 사용자");
+        }
+
+        return "home"; // → templates/home.html
+    }
+
+
 
 }

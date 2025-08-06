@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>일기 상세 보기</title>
+</head>
+<body>
+<h1>📖 일기 상세 보기</h1>
+
+<p><strong>제목:</strong> <span th:text="${diary.title}"></span></p>
+
+<p><strong>작성일시:</strong>
+    <span th:text="${#temporals.format(diary.createdAt, 'yyyy-MM-dd HH:mm')}"></span>
+</p>
+
+<p><strong>내용:</strong></p>
+<div th:text="${diary.content}"></div>
+
+<p><strong>이미지:</strong></p>
+<div th:if="${diary.imagePath}">
+    <img th:src="@{${diary.imagePath}}" alt="이미지" style="max-width: 400px;">
+</div>
+<div th:if="${diary.imagePath == null}">
+    <p>이미지가 없습니다.</p>
+</div>
+
+<hr>
+<a th:href="@{'/diary/sujung/' + ${diary.diaryId}}">✏️ 수정</a> |
+<a th:href="@{'/diary/list'}">🔙 목록으로</a>
+
+<!-- 삭제 버튼 (상세보기 페이지 안에 넣어줘) -->
+<form th:action="@{'/diary/sakje/' + ${diary.diaryId}}" method="get" style="display:inline;">
+    <button type="submit">삭제</button>
+</form>
+
+
+</body>
+
+
+</html>
+

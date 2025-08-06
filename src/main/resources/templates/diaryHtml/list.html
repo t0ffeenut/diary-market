@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>일기 목록</title>
+</head>
+<body>
+<h1>🗂️ 일기 목록</h1>
+
+<a th:href="@{/diary/chuga}">✏️ 새 일기 작성</a>
+<hr>
+
+<table border="1">
+  <thead>
+  <tr>
+    <th>번호</th>
+    <th>제목</th>
+    <th>작성일</th>
+    <th>자세히</th>
+    <th>삭제</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="diary, iStat : ${diaries}">
+    <td th:text="${iStat.index + 1}"></td>
+    <td th:text="${diary.title}"></td>
+    <td th:text="${#temporals.format(diary.createdAt, 'yyyy-MM-dd HH:mm')}"></td>
+    <td><a th:href="@{|/diary/view/${diary.diaryId}|}">보기</a></td>
+    <td><a th:href="@{|/diary/sakjeProc/${diary.diaryId}|}" onclick="return confirm('삭제하시겠습니까?');">삭제</a></td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
