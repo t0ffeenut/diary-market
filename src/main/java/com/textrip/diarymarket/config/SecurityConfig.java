@@ -20,6 +20,13 @@ public class SecurityConfig {
                         .requestMatchers("/", "/login", "/css/**", "/js/**", "/images/**").permitAll() // ✅ 여기!
                         .anyRequest().authenticated()
                 )
+                .formLogin(form -> form
+                        .loginPage("/login") // 너가 커스텀한 로그인 페이지
+                        .defaultSuccessUrl("/home", true)
+                        .permitAll()
+                )
+
+
                 .logout(logout -> logout
                         .logoutUrl("/logout")
                         .logoutSuccessUrl("/login") // 내부 경로로 변경
